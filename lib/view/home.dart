@@ -1,5 +1,6 @@
 
 
+import 'package:crud/view/list_name.dart';
 import 'package:flutter/material.dart';
 
 class Home extends StatelessWidget {
@@ -12,10 +13,11 @@ class Home extends StatelessWidget {
       appBar: AppBar(
         title: const Text(
           'CRUD',
-          style: TextStyle(color: Color.fromARGB(255, 255, 255, 1)),
+          style: TextStyle(color: Color.fromARGB(255, 0, 0, 0)),
         ),
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
       ),
+      body: ListName(),
     );
   }
 
