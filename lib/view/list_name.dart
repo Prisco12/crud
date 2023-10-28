@@ -1,5 +1,6 @@
 
 
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 
 class ListName extends StatefulWidget {
@@ -35,11 +36,32 @@ class _ListNameState extends State<ListName> {
 
                   final nome = ctrl.text;
                   print(nome);
+
+                  setState(() {
+                    if(nome.isNotEmpty){
+                    listName.add(nome);
+                  }
+                  });
+
+                 
+                  print(listName);
                   ctrl.clear();
                 },
                 icon: const Icon(Icons.add),
                 )
             ],
+          ),
+        ),
+        Expanded(
+          child: ListView.builder(
+            itemCount: listName.length,
+            itemBuilder: (context, index) {
+              final nome = listName[index];
+
+              return ListTile(
+                title: Text(nome),
+              );
+            }
           ),
         ),
       ],
